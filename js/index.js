@@ -5,7 +5,7 @@
 // global variables
 var //CA = "https://acme-staging.api.letsencrypt.org",
     CA = "https://acme-v01.api.letsencrypt.org",
-    TERMS = "https://letsencrypt.org/documents/LE-SA-v1.0.1-July-27-2015.pdf",
+    TERMS = "https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf",
     ACCOUNT_EMAIL, // "bar@foo.com"
     ACCOUNT_PUBKEY, // {
                     //   "pubkey": "-----BEGIN PUBLIC KEY...",
@@ -567,7 +567,7 @@ function validateInitialSigs(e){
                     python_content.querySelector(".help-content a").innerHTML = "";
                     python_content.querySelector(".help-content a").appendChild(document.createTextNode(link));
                     python_content.querySelector("textarea").value = "" +
-                        "sudo python -c \"import BaseHTTPServer; \\\n" +
+                        "sudo python2 -c \"import BaseHTTPServer; \\\n" +
                         "    h = BaseHTTPServer.BaseHTTPRequestHandler; \\\n" +
                         "    h.do_GET = lambda r: r.send_response(200) or r.end_headers() " +
                                 "or r.wfile.write('" + DOMAINS[d]['server_data'] + "'); \\\n" +
